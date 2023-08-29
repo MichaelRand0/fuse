@@ -15,7 +15,7 @@ function App() {
   const debounced = useDebounce(value, 500)
 
   useEffect(() => {
-    if (debounced.length >= 3) {
+    if (debounced.length > 3) {
       fetchJokes(debounced)
     } else {
       setJokes([])
@@ -31,12 +31,13 @@ function App() {
   }, [data])
 
   return (
-    <Container className="pt-10 sm:pt-16 md:pt-32 flex flex-col items-center">
+    <Container className="pt-10 pb-5 md:pb-10 sm:pt-16 md:pt-32 flex flex-col items-center">
       <Search
+        autoFocus={true}
         message={message}
         value={value}
         onChange={(v) => setValue(v.target.value)}
-        className="w-full max-w-[626px] mb-[60px]"
+        className="w-full max-w-[626px] mb-8 sm:mb-[60px]"
         placeholder="Search..."
       />
       {isLoading || isFetching ? <Rolling /> : <JokesList items={jokes} />}

@@ -2,7 +2,6 @@
 const useDate = () => {
 
   const getLocalDate = (date: Date) => {
-    console.log('date', date)
     const year = new Date(date).getFullYear()
     const monthNum = new Date(date).getMonth() + 1
     const dayNum = new Date(date).getDate()
