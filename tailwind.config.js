@@ -4,13 +4,15 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        input: "0px 6px 10px 0px rgba(34, 60, 80, 0.2)",
+        input: "0px 7px 12px 0px #64646F33",
+        cardJoke: "0px 7px 25px 0px #64646F33",
       },
     },
     colors: {
       brand: "#656EC2",
       "brand-light": "#656ec2a7",
-      grey: "#282626",
+      dark: "#282626",
+      grey: "#767676",
     },
     fontFamily: {
       Fira: ["Fira"],
