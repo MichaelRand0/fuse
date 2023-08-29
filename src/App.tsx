@@ -1,26 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react"
+import Container from "./components/Container"
+import Search from "./components/Search"
 
 function App() {
+  const [value, setValue] = useState('')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container className="pt-10 sm:pt-16 md:pt-32 flex flex-col items-center">
+      <Search value={value} onChange={v => setValue(v.target.value)} message="Found jokes: 12" className="w-full max-w-[626px]" placeholder="Search..." />
+    </Container>
+  )
 }
 
-export default App;
+export default App
