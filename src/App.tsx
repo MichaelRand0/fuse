@@ -12,7 +12,7 @@ function App() {
   const [message, setMessage] = useState("")
   const { setJokes, jokes } = useJokes()
   const [fetchJokes, { data, isLoading, isFetching }] = useLazyGetJokesBySearchQuery()
-  const debounced = useDebounce(value, 500)
+  const debounced = useDebounce(value.trim(), 500)
 
   useEffect(() => {
     if (debounced.length > 3) {
